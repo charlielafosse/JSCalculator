@@ -4,4 +4,4 @@ function func(e){
   }
 }
 
-document.querySelector("section").addEventListener("click", func, false);
+document.getElementById("keyboard").addEventListener("click", func, false);
