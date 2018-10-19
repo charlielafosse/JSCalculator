@@ -3,6 +3,7 @@ section {
   grid-gap: 1px;
   grid-template-columns: 80px 80px 80px 80px;
   background-color: #fff;
+  align-self: center;
 }
 
 div {
