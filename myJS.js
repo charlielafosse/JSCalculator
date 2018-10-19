@@ -1,6 +1,6 @@
 function func(e){
   if(e.target){
-    alert(e.target.innerHTML);
+    document.getElementById("display").innerHTML = e.target.innerHTML;
   }
 }
 
