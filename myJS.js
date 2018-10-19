@@ -11,7 +11,7 @@
 let displayNumb = [];
 function func2(t){
   console.log(t.target.innerHTML);
-  if(t.target.class == "numb"){
+  if(t.target.className == "numb"){
     // PROBLEM - taking in strings not numbers! need to use classes instead...
     console.log("you clicked a number");
     displayNumb.push(t.target.innerHTML);
