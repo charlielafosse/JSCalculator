@@ -12,7 +12,8 @@ let displayNumb = [];
 function func2(t){
   console.log(t.target.innerHTML);
   console.log(typeof t.target.innerHTML);
-  if(t.target.innerHTML.charCode > 47 || t.target.innerHTML.charCode < 58){
+  if(t.target.class = "numb"){
+    // PROBLEM - taking in strings not numbers! need to use classes instead...
     console.log("you clicked a number");
     displayNumb.push(t.target.innerHTML);
     console.log(displayNumb);
