@@ -16,4 +16,13 @@ function func2(t){
   }
 }
 
+let accumulatingValue = 0;
+function plusClick(){
+  accumulatingValue += parsed;
+  console.log(accumulatingValue);
+  document.getElementById("display").innerHTML = accumulatingValue;
+  displayNumb = [];
+  parsed = 0;
+}
+
 document.getElementById("keyboard").addEventListener("click", func2, false);
