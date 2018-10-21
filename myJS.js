@@ -11,17 +11,27 @@ function func2(t){
     parsed = parseInt(displayNumb.join(""), 10);
     console.log(parsed);
     document.getElementById("display").innerHTML = parsed;
+  } else if(t.target.id == "subtract"){
+    subtractClick();
   } else if(t.target.id == "add"){
     plusClick();
   } else {
-  console.log("you DIDN'T click a number");
+    console.log("you DIDN'T click a number");
   }
 }
 
 let accumulatingValue = 0;
+
 function plusClick(){
   accumulatingValue += parsed;
   console.log(accumulatingValue);
+  document.getElementById("display").innerHTML = accumulatingValue;
+  displayNumb = [];
+  parsed = 0;
+}
+
+function subtractClick(){
+  accumulatingValue -= parsed;
   document.getElementById("display").innerHTML = accumulatingValue;
   displayNumb = [];
   parsed = 0;
