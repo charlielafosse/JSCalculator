@@ -11,6 +11,8 @@ function func2(t){
     parsed = parseInt(displayNumb.join(""), 10);
     console.log(parsed);
     document.getElementById("display").innerHTML = parsed;
+  } else if(t.target.id == "add"){
+    plusClick();
   } else {
   console.log("you DIDN'T click a number");
   }
