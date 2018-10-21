@@ -1,21 +1,16 @@
-// function func(e){
-//   if(e.target){
-//     document.getElementById("display").innerHTML = e.target.innerHTML;
-//   }
-// }
-
 // ADDITION LOGIC
 // intialise accumulatingValue as 0
 // accumulate button clicks into a number
 // add currentValue to accumulatingValue when + clicked
 let displayNumb = [];
+let parsed = 0;
 function func2(t){
   console.log(t.target.innerHTML);
   if(t.target.className == "numb"){
-    // PROBLEM - taking in strings not numbers! need to use classes instead...
-    console.log("you clicked a number");
     displayNumb.push(t.target.innerHTML);
-    console.log(displayNumb);
+    parsed = parseInt(displayNumb.join(""), 10);
+    console.log(parsed);
+    document.getElementById("display").innerHTML = parsed;
   } else {
   console.log("you DIDN'T click a number");
   }
