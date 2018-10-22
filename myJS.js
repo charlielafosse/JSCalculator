@@ -5,22 +5,18 @@
 let displayNumb = [];
 let parsed = 0;
 function func2(t){
-  console.log(t.target.innerHTML);
   if(t.target.className == "numb"){
-    displayNumb.push(t.target.innerHTML);
-    parsed = parseInt(displayNumb.join(""), 10);
-    console.log(parsed);
-    document.getElementById("display").innerHTML = parsed;
+    makeNumber(t.target.innerHTML);
   } else if(t.target.id == "clear"){
     clearClick();
+  } else if(t.target.id == "subtract"){
+    subtractClick(t.target.innerHTML);
   } else if(t.target.id == "equals"){
     equalsClick();
-  } else if(t.target.id == "subtract"){
-    subtractClick();
   } else if(t.target.id == "add"){
-    addClick();
+    addClick(t.target.innerHTML);
   } else {
-    console.log("you DIDN'T click a number");
+  console.log("you DIDN'T click a number");
   }
 }
 
