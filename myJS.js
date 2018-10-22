@@ -13,6 +13,8 @@ function func2(t){
     document.getElementById("display").innerHTML = parsed;
   } else if(t.target.id == "clear"){
     clearClick();
+  } else if(t.target.id == "equals"){
+    equalsClick();
   } else if(t.target.id == "subtract"){
     subtractClick();
   } else if(t.target.id == "add"){
@@ -27,14 +29,14 @@ let accumulatingValue = 0;
 function addClick(){
   accumulatingValue += parsed;
   console.log(accumulatingValue);
-  document.getElementById("display").innerHTML = accumulatingValue;
+  // document.getElementById("display").innerHTML = accumulatingValue;
   displayNumb = [];
   parsed = 0;
 }
 
 function subtractClick(){
   accumulatingValue -= parsed;
-  document.getElementById("display").innerHTML = accumulatingValue;
+  // document.getElementById("display").innerHTML = accumulatingValue;
   displayNumb = [];
   parsed = 0;
 }
@@ -43,6 +45,10 @@ function clearClick(){
   displayNumb = [];
   parsed = 0;
   accumulatingValue = 0;
+  document.getElementById("display").innerHTML = accumulatingValue;
+}
+
+function equalsClick(){
   document.getElementById("display").innerHTML = accumulatingValue;
 }
 
