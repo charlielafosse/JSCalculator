@@ -1,4 +1,6 @@
 let calcArray = [];
+let displayNumb = [];
+let parsed = 0;
 
 function subtractClick(clicked){
   calcArray.push(parsed);
@@ -23,8 +25,6 @@ function clearClick(){
   calcArray = [];
 }
 
-let displayNumb = [];
-let parsed = 0;
 function makeNumber(key){
   displayNumb.push(key);
   document.getElementById("display").innerHTML= displayNumb.join("");
