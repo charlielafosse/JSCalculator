@@ -1,9 +1,54 @@
-// ADDITION LOGIC
-// intialise accumulatingValue as 0
-// accumulate button clicks into a number
-// add currentValue to accumulatingValue when + clicked
+let calcArray = [];
+
+function subtractClick(clicked){
+  calcArray.push(parsed);
+  calcArray.push("subtract");
+  console.log(calcArray);
+  document.getElementById("display").innerHTML = clicked;
+  displayNumb = [];
+}
+
+function addClick(clicked){
+  calcArray.push(parsed);
+  calcArray.push("add");
+  console.log(calcArray);
+  document.getElementById("display").innerHTML = clicked;
+  displayNumb = [];
+}
+
+function clearClick(){
+  displayNumb = [];
+  parsed = 0;
+  document.getElementById("display").innerHTML = 0;
+  calcArray = [];
+}
+
 let displayNumb = [];
 let parsed = 0;
+function makeNumber(key){
+  displayNumb.push(key);
+  document.getElementById("display").innerHTML= displayNumb.join("");
+  parsed = parseFloat(displayNumb.join(""), 10);
+}
+
+function equalsClick(){
+  calcArray.push(parsed);
+  console.log(calcArray);
+  let result = calcArray[0];
+  for(var i = 1; i < calcArray.length; i++){
+    if(typeof calcArray[i] == "string"){
+      continue;
+    }
+    if(calcArray[i-1] == "subtract"){
+      result = (result - calcArray[i]);
+    } else if (calcArray[i-1] == "add"){
+      result = (result + calcArray[i]);
+    }
+  }
+  console.log(result);
+  document.getElementById("display").innerHTML = result;
+}
+
 function func2(t){
   if(t.target.className == "numb"){
     makeNumber(t.target.innerHTML);
@@ -18,34 +63,6 @@ function func2(t){
   } else {
   console.log("you DIDN'T click a number");
   }
-}
-
-let accumulatingValue = 0;
-
-function addClick(){
-  accumulatingValue += parsed;
-  console.log(accumulatingValue);
-  // document.getElementById("display").innerHTML = accumulatingValue;
-  displayNumb = [];
-  parsed = 0;
-}
-
-function subtractClick(){
-  accumulatingValue -= parsed;
-  // document.getElementById("display").innerHTML = accumulatingValue;
-  displayNumb = [];
-  parsed = 0;
-}
-
-function clearClick(){
-  displayNumb = [];
-  parsed = 0;
-  accumulatingValue = 0;
-  document.getElementById("display").innerHTML = accumulatingValue;
-}
-
-function equalsClick(){
-  document.getElementById("display").innerHTML = accumulatingValue;
 }
 
 document.getElementById("keyboard").addEventListener("click", func2, false);
