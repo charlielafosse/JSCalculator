@@ -47,9 +47,11 @@ function equalsClick(){
   }
   console.log(result);
   document.getElementById("display").innerHTML = result;
+  parsed = result;
+  calcArray = [];
 }
 
-function func2(t){
+function myClick(t){
   if(t.target.className == "numb"){
     makeNumber(t.target.innerHTML);
   } else if(t.target.id == "clear"){
@@ -65,4 +67,4 @@ function func2(t){
   }
 }
 
-document.getElementById("keyboard").addEventListener("click", func2, false);
+document.getElementById("keyboard").addEventListener("click", myClick, false);
