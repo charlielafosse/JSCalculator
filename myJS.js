@@ -44,6 +44,7 @@ function equalsClick(){
   document.getElementById("display").innerHTML = result;
   parsed = result;
   calcArray = [];
+  displayNumb = [];
 }
 
 function myClick(t){
