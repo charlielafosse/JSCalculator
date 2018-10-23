@@ -2,11 +2,11 @@ section {
   display: grid;
   grid-gap: 1px;
   grid-template-columns: 80px 80px 80px 80px;
-  background-color: #fff;
-  align-self: center;
+  width: 24%;
+  margin: 5% auto;
 }
 
-div {
+button {
   background-color: green;
   color: white;
   border-radius: 5px;
@@ -14,9 +14,18 @@ div {
   font-size: 1.75em;
 }
 
+button:hover{
+  color: blue;
+}
+
 #display {
   grid-column: 1 / 5;
   grid-row: 1;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 1.75em;
 }
 
 #clear {
