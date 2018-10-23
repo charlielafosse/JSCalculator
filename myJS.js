@@ -18,6 +18,22 @@ function addClick(clicked){
   displayNumb = [];
 }
 
+function divideClick(clicked){
+  calcArray.push(parsed);
+  calcArray.push("divide");
+  console.log(calcArray);
+  document.getElementById("display").innerHTML = clicked;
+  displayNumb = [];
+}
+
+function multiplyClick(clicked){
+  calcArray.push(parsed);
+  calcArray.push("multiply");
+  console.log(calcArray);
+  document.getElementById("display").innerHTML = clicked;
+  displayNumb = [];
+}
+
 function clearClick(){
   displayNumb = [];
   parsed = 0;
@@ -43,6 +59,10 @@ function equalsClick(){
       result = (result - calcArray[i]);
     } else if (calcArray[i-1] == "add"){
       result = (result + calcArray[i]);
+    } else if (calcArray[i-1] == "divide"){
+      result = (result / calcArray[i]);
+    } else if (calcArray[i-1] == "multiply"){
+      result = (result * calcArray[i]);
     }
   }
   console.log(result);
@@ -56,12 +76,16 @@ function myClick(t){
     makeNumber(t.target.innerHTML);
   } else if(t.target.id == "clear"){
     clearClick();
-  } else if(t.target.id == "subtract"){
-    subtractClick(t.target.innerHTML);
   } else if(t.target.id == "equals"){
     equalsClick();
+  } else if(t.target.id == "subtract"){
+    subtractClick(t.target.innerHTML);
   } else if(t.target.id == "add"){
     addClick(t.target.innerHTML);
+  } else if(t.target.id == "divide"){
+    divideClick(t.target.innerHTML);
+  } else if(t.target.id == "multiply"){
+    multiplyClick(t.target.innerHTML);
   } else {
   console.log("you DIDN'T click a number");
   }
