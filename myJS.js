@@ -2,10 +2,15 @@ let calcArray = [];
 let displayNumb = [];
 let parsed = 0;
 
+function makeNumber(key){
+  displayNumb.push(key);
+  document.getElementById("display").innerHTML= displayNumb.join("");
+  parsed = parseFloat(displayNumb.join(""), 10);
+}
+
 function operatorClick(clicked){
   calcArray.push(parsed);
   calcArray.push(clicked.id);
-  console.log(calcArray);
   document.getElementById("display").innerHTML = clicked.innerHTML;
   displayNumb = [];
 }
@@ -41,12 +46,6 @@ function equalsClick(){
   calcArray = [];
 }
 
-function makeNumber(key){
-  displayNumb.push(key);
-  document.getElementById("display").innerHTML= displayNumb.join("");
-  parsed = parseFloat(displayNumb.join(""), 10);
-}
-
 function myClick(t){
   if(t.target.className == "numb"){
     makeNumber(t.target.innerHTML);
@@ -57,7 +56,7 @@ function myClick(t){
   } else if(t.target.className == "operator"){
     operatorClick(t.target);
   } else {
-  console.log("you DIDN'T click a number");
+  console.log("you didn't click a button");
   }
 }
 
