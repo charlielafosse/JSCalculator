@@ -2,35 +2,11 @@ let calcArray = [];
 let displayNumb = [];
 let parsed = 0;
 
-function subtractClick(clicked){
+function operatorClick(clicked){
   calcArray.push(parsed);
-  calcArray.push("subtract");
+  calcArray.push(clicked.id);
   console.log(calcArray);
-  document.getElementById("display").innerHTML = clicked;
-  displayNumb = [];
-}
-
-function addClick(clicked){
-  calcArray.push(parsed);
-  calcArray.push("add");
-  console.log(calcArray);
-  document.getElementById("display").innerHTML = clicked;
-  displayNumb = [];
-}
-
-function divideClick(clicked){
-  calcArray.push(parsed);
-  calcArray.push("divide");
-  console.log(calcArray);
-  document.getElementById("display").innerHTML = clicked;
-  displayNumb = [];
-}
-
-function multiplyClick(clicked){
-  calcArray.push(parsed);
-  calcArray.push("multiply");
-  console.log(calcArray);
-  document.getElementById("display").innerHTML = clicked;
+  document.getElementById("display").innerHTML = clicked.innerHTML;
   displayNumb = [];
 }
 
@@ -39,12 +15,6 @@ function clearClick(){
   parsed = 0;
   document.getElementById("display").innerHTML = 0;
   calcArray = [];
-}
-
-function makeNumber(key){
-  displayNumb.push(key);
-  document.getElementById("display").innerHTML= displayNumb.join("");
-  parsed = parseFloat(displayNumb.join(""), 10);
 }
 
 function equalsClick(){
@@ -71,6 +41,12 @@ function equalsClick(){
   calcArray = [];
 }
 
+function makeNumber(key){
+  displayNumb.push(key);
+  document.getElementById("display").innerHTML= displayNumb.join("");
+  parsed = parseFloat(displayNumb.join(""), 10);
+}
+
 function myClick(t){
   if(t.target.className == "numb"){
     makeNumber(t.target.innerHTML);
@@ -78,14 +54,8 @@ function myClick(t){
     clearClick();
   } else if(t.target.id == "equals"){
     equalsClick();
-  } else if(t.target.id == "subtract"){
-    subtractClick(t.target.innerHTML);
-  } else if(t.target.id == "add"){
-    addClick(t.target.innerHTML);
-  } else if(t.target.id == "divide"){
-    divideClick(t.target.innerHTML);
-  } else if(t.target.id == "multiply"){
-    multiplyClick(t.target.innerHTML);
+  } else if(t.target.className == "operator"){
+    operatorClick(t.target);
   } else {
   console.log("you DIDN'T click a number");
   }
