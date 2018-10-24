@@ -4,6 +4,7 @@ section {
   grid-template-columns: 80px 80px 80px 80px;
   width: 24%;
   margin: 5% auto;
+  font-family: "Arvo", serif;
 }
 
 button {
@@ -12,6 +13,7 @@ button {
   border-radius: 5px;
   padding: 20px;
   font-size: 1.75em;
+  font-family: "Arvo", serif;
 }
 
 button:hover{
