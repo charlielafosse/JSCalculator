@@ -1,18 +1,25 @@
 let calcArray = [];
 let displayNumb = [];
 let parsed = 0;
+let operatorLastClick = false;
 
 function makeNumber(key){
   displayNumb.push(key);
   document.getElementById("display").innerHTML= displayNumb.join("");
   parsed = parseFloat(displayNumb.join(""), 10);
+  operatorLastClick = false;
 }
 
 function operatorClick(clicked){
-  calcArray.push(parsed);
-  calcArray.push(clicked.id);
-  document.getElementById("display").innerHTML = clicked.innerHTML;
-  displayNumb = [];
+  if(operatorLastClick == false){
+    calcArray.push(parsed);
+    calcArray.push(clicked.id);
+    document.getElementById("display").innerHTML = clicked.innerHTML;
+    displayNumb = [];
+    operatorLastClick = true;
+  } else if (operatorLastClick == true){
+    console.log("don't press operator twice!");
+  }
 }
 
 function clearClick(){
@@ -20,6 +27,7 @@ function clearClick(){
   parsed = 0;
   document.getElementById("display").innerHTML = 0;
   calcArray = [];
+  operatorLastClick = false;
 }
 
 function equalsClick(){
@@ -45,6 +53,7 @@ function equalsClick(){
   parsed = result;
   calcArray = [];
   displayNumb = [];
+  operatorLastClick = false;
 }
 
 function myClick(t){
