@@ -1,33 +1,39 @@
+body {
+  background-color: #D7C4BB;
+}
+
 section {
   display: grid;
   grid-gap: 1px;
   grid-template-columns: 80px 80px 80px 80px;
   width: 24%;
-  margin: 5% auto;
+  margin: 8% auto;
   font-family: "Arvo", serif;
+  background-color: #ECB88A;
 }
 
 button {
-  background-color: green;
   color: white;
   border-radius: 5px;
   padding: 20px;
   font-size: 1.75em;
   font-family: "Arvo", serif;
+  background-color: #ECB88A;
 }
 
 button:hover{
-  color: blue;
+  color: #D7C4BB;
+  cursor: pointer;
 }
 
 #display {
   grid-column: 1 / 5;
   grid-row: 1;
-  background-color: green;
   color: white;
   border-radius: 5px;
   padding: 20px;
   font-size: 1.75em;
+  background-color: #ECB88A;
 }
 
 #clear {
