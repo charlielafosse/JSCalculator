@@ -24,7 +24,12 @@ function makeNumber(key){
 }
 
 function operatorClick(clicked){
-  if(operatorLastClick == false){
+  if(calcArray.length == 0 && clicked.innerHTML == "-"){
+    console.log("negative number at beginning");
+    operatorThenMinus = true;
+    makeNumber(clicked.innerHTML);
+    // maybe it fulfils other if statements after it executes this one?
+  } else if(operatorLastClick == false){
     calcArray.push(parsed);
     calcArray.push(clicked.id);
     document.getElementById("display").innerHTML = clicked.innerHTML;
