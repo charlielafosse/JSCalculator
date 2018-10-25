@@ -25,12 +25,12 @@ function operatorClick(clicked){
     displayNumb = [];
     operatorLastClick = true;
   } else if(operatorLastClick == true){
+      console.log("second operator click");
       if(clicked.innerHTML == "-" || operatorThenMinus == false){
+        console.log("plus, div or multiply followed by minus");
         makeNumber(clicked.innerHTML);
         operatorLastClick == true;
         operatorThenMinus == true;
-      } else if(operatorThenMinus == true) {
-        console.log("stop bogus clicking!");
       } else {
         console.log("stop bogus clicking!");
       }
