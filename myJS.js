@@ -1,4 +1,5 @@
 // problem, if hit minus loads, and then a number, cant add other operators...
+// now can't do "98 - 456 - 45665" etc.
 // strange, as operatorLastClick should be at false after the makeNumber func.
  // Maybe move the two booleans inside up to top??
 
@@ -18,6 +19,8 @@ function makeNumber(key){
   displayNumb.push(key);
   document.getElementById("display").innerHTML= displayNumb.join("");
   parsed = parseFloat(displayNumb.join(""), 10);
+  operatorLastClick == false;
+  operatorThenMinus == false;
 }
 
 function operatorClick(clicked){
