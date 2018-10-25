@@ -24,17 +24,7 @@ function makeNumber(key){
 }
 
 function operatorClick(clicked){
-  if(calcArray = [] && clicked.innerHTML == "-"){
-    console.log("beginning with a negative numb");
-    if(clicked.innerHTML == "-" && operatorThenMinus == false){
-      operatorThenMinus = true;
-      console.log("plus, div or multiply followed by minus");
-      makeNumber(clicked.innerHTML);
-      // operatorThenMinus = true;
-      operatorLastClick == true;
-      console.log(operatorLastClick);
-      console.log(operatorThenMinus);
-  } else if(operatorLastClick == false){
+  if(operatorLastClick == false){
     calcArray.push(parsed);
     calcArray.push(clicked.id);
     document.getElementById("display").innerHTML = clicked.innerHTML;
@@ -57,7 +47,6 @@ function operatorClick(clicked){
         console.log("stop bogus clicking!");
       }
     }
-  }
 }
 
 function clearClick(){
@@ -113,3 +102,17 @@ function myClick(t){
 }
 
 document.getElementById("keyboard").addEventListener("click", myClick, false);
+
+
+// old code
+// if(calcArray = [] && clicked.innerHTML == "-"){
+//   console.log("beginning with a negative numb");
+//   if(clicked.innerHTML == "-" && operatorThenMinus == false){
+//     operatorThenMinus = true;
+//     console.log("plus, div or multiply followed by minus");
+//     makeNumber(clicked.innerHTML);
+//     // operatorThenMinus = true;
+//     operatorLastClick == true;
+//     console.log(operatorLastClick);
+//     console.log(operatorThenMinus);
+// } else
