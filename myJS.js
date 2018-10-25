@@ -19,6 +19,7 @@ function makeNumber(key){
   displayNumb.push(key);
   document.getElementById("display").innerHTML= displayNumb.join("");
   parsed = parseFloat(displayNumb.join(""), 10);
+  operatorLastClick == false;
 }
 
 function operatorClick(clicked){
