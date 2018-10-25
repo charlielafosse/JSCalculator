@@ -25,7 +25,7 @@ function makeNumber(key){
 }
 
 function operatorClick(clicked){
-  if(beginning = true && clicked.innerHTML = "-"){
+  if(beginning == true && clicked.innerHTML == "-"){
     console.log("negative number at beginning");
     operatorThenMinus = true;
     makeNumber(clicked.innerHTML);
