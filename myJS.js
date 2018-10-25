@@ -27,8 +27,10 @@ function operatorClick(clicked){
   } else if(operatorLastClick == true){
       if(clicked.innerHTML == "-" || operatorThenMinus == false){
         makeNumber(clicked.innerHTML);
-        operatorLastClick = true;
+        operatorLastClick == true;
         operatorThenMinus == true;
+      } else if(operatorThenMinus == true) {
+        console.log("stop bogus clicking!");
       } else {
         console.log("stop bogus clicking!");
       }
