@@ -66,13 +66,13 @@ function operatorClick(clicked){
 }
 
 function clearClick(){
+  beginning = true;
   displayNumb = [];
   parsed = 0;
   document.getElementById("display").innerHTML = 0;
   calcArray = [];
   operatorLastClick = false;
   operatorThenMinus = false;
-  beginning = true;
 }
 
 function equalsClick(){
