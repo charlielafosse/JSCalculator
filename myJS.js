@@ -14,7 +14,7 @@ function makeNumber(key){
   displayNumb.push(key);
   document.getElementById("display").innerHTML= displayNumb.join("");
   parsed = parseFloat(displayNumb.join(""), 10);
-  operatorLastClick = false;
+  operatorLastClick == false;
 }
 
 function operatorClick(clicked){
@@ -30,7 +30,9 @@ function operatorClick(clicked){
         console.log("plus, div or multiply followed by minus");
         makeNumber(clicked.innerHTML);
         operatorLastClick == true;
+        console.log(operatorLastClick)
         operatorThenMinus == true;
+        console.log(operatorThenMinus);
       } else {
         console.log("stop bogus clicking!");
       }
