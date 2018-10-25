@@ -1,3 +1,7 @@
+// problem - allow user to press MINUS once after an operator!!! to add/multiply/divide by a minus numb...
+
+// problem - contain long numbers within the display...
+
 let calcArray = [];
 let displayNumb = [];
 let parsed = 0;
@@ -17,6 +21,9 @@ function operatorClick(clicked){
     document.getElementById("display").innerHTML = clicked.innerHTML;
     displayNumb = [];
     operatorLastClick = true;
+  } else if (operatorLastClick == true || clicked.innerHTML == "-"){
+    console.log("operator then minus");
+    makeNumber(clicked.innerHTML);
   } else if (operatorLastClick == true){
     console.log("don't press operator twice!");
   }
