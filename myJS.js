@@ -27,13 +27,13 @@ function operatorClick(clicked){
   } else if(operatorLastClick == true){
       console.log("second operator click");
       if(clicked.innerHTML == "-" && operatorThenMinus == false){
-        let operatorThenMinus = true;
+        operatorThenMinus = true;
         console.log("plus, div or multiply followed by minus");
         makeNumber(clicked.innerHTML);
         operatorLastClick == true;
         console.log(operatorLastClick);
         console.log(operatorThenMinus);
-      } else if (operatorThenMinus = true || operatorLastClick = true) {
+      } else if(operatorThenMinus == true || operatorLastClick == true) {
         console.log("stop bogus clicking!");
       }
   }
