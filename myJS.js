@@ -24,7 +24,7 @@ function makeNumber(key){
 }
 
 function operatorClick(clicked){
-  if(calcArray = []){
+  if(calcArray = [] && clicked.innerHTML == "-"){
     console.log("beginning with a negative numb");
     if(clicked.innerHTML == "-" && operatorThenMinus == false){
       operatorThenMinus = true;
@@ -56,6 +56,7 @@ function operatorClick(clicked){
       } else if(operatorThenMinus == true || operatorLastClick == true) {
         console.log("stop bogus clicking!");
       }
+    }
   }
 }
 
