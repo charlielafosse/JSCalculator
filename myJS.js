@@ -33,7 +33,7 @@ function operatorClick(clicked){
         operatorLastClick == true;
         console.log(operatorLastClick);
         console.log(operatorThenMinus);
-      } else {
+      } else if (operatorThenMinus = true || operatorLastClick = true) {
         console.log("stop bogus clicking!");
       }
   }
