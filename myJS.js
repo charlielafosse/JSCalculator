@@ -1,12 +1,8 @@
 // problem, if hit minus loads, and then a number, cant add other operators...
-// now can't do "98 - 456 - 45665" etc.
 // strange, as operatorLastClick should be at false after the makeNumber func.
  // Maybe move the two booleans inside up to top??
+ // cant start an equation with a minus number
 
- // big problem - can't chain multiple operators and numbers in an equation...
- // when the numbers are hit, the func is not registering that a number
- // and NOT an operator has been hit... operatorLastClick is TRUE after numbers
- // hit is basically the
 
 // problem - contain long numbers within the display...
 
@@ -28,11 +24,24 @@ function makeNumber(key){
 }
 
 function operatorClick(clicked){
-  if(operatorLastClick == false){
+  if(calcArray = []){
+    console.log("beginning with a negative numb");
+    if(clicked.innerHTML == "-" && operatorThenMinus == false){
+      operatorThenMinus = true;
+      console.log("plus, div or multiply followed by minus");
+      makeNumber(clicked.innerHTML);
+      // operatorThenMinus = true;
+      operatorLastClick == true;
+      console.log(operatorLastClick);
+      console.log(operatorThenMinus);
+  } else if(operatorLastClick == false){
     calcArray.push(parsed);
     calcArray.push(clicked.id);
     document.getElementById("display").innerHTML = clicked.innerHTML;
     displayNumb = [];
+    // this is the problem here ^. Sets displaynumb to empty...
+    // write an if statement to check if there's something that comes before?
+    // actually the problem is when you hit minus, calcArray = [0, "subtract"]
     operatorLastClick = true;
   } else if(operatorLastClick == true){
       console.log("second operator click");
