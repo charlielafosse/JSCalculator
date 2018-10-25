@@ -2,10 +2,13 @@
 
 // problem - contain long numbers within the display...
 
+// make trees disappear at break point (or shrink?)
+
 let calcArray = [];
 let displayNumb = [];
 let parsed = 0;
 let operatorLastClick = false;
+let operatorThenMinus = false;
 
 function makeNumber(key){
   displayNumb.push(key);
@@ -21,11 +24,14 @@ function operatorClick(clicked){
     document.getElementById("display").innerHTML = clicked.innerHTML;
     displayNumb = [];
     operatorLastClick = true;
-  } else if (operatorLastClick == true || clicked.innerHTML == "-"){
-    console.log("operator then minus");
-    makeNumber(clicked.innerHTML);
-  } else if (operatorLastClick == true){
-    console.log("don't press operator twice!");
+  } else if(operatorLastClick == true){
+      if(clicked.innerHTML == "-" || operatorThenMinus == false){
+        makeNumber(clicked.innerHTML);
+        operatorLastClick = true;
+        operatorThenMinus == true;
+      } else {
+        console.log("stop bogus clicking!");
+      }
   }
 }
 
