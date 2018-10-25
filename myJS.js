@@ -14,13 +14,11 @@ let operatorLastClick = false;
 let operatorThenMinus = false;
 
 function makeNumber(key){
-  operatorLastClick == false;
-  operatorThenMinus == false;
+  // operatorLastClick == false;
+  // operatorThenMinus == false;
   displayNumb.push(key);
   document.getElementById("display").innerHTML= displayNumb.join("");
   parsed = parseFloat(displayNumb.join(""), 10);
-  operatorLastClick == false;
-  operatorThenMinus == false;
 }
 
 function operatorClick(clicked){
@@ -84,6 +82,8 @@ function equalsClick(){
 
 function myClick(t){
   if(t.target.className == "numb"){
+    operatorLastClick == false;
+    operatorThenMinus == false;
     makeNumber(t.target.innerHTML);
   } else if(t.target.id == "clear"){
     clearClick();
