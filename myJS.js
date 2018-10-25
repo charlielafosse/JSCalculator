@@ -1,4 +1,6 @@
-// problem - allow user to press MINUS once after an operator!!! to add/multiply/divide by a minus numb...
+// problem, if hit minus loads, and then a number, cant add other operators...
+// strange, as operatorLastClick should be at false after the makeNumber func.
+ // Maybe move the two booleans inside up to top??
 
 // problem - contain long numbers within the display...
 
@@ -11,11 +13,11 @@ let operatorLastClick = false;
 let operatorThenMinus = false;
 
 function makeNumber(key){
+  operatorLastClick == false;
+  operatorThenMinus == false;
   displayNumb.push(key);
   document.getElementById("display").innerHTML= displayNumb.join("");
   parsed = parseFloat(displayNumb.join(""), 10);
-  operatorLastClick == false;
-  operatorThenMinus == false;
 }
 
 function operatorClick(clicked){
