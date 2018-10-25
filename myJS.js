@@ -47,6 +47,7 @@ function clearClick(){
   document.getElementById("display").innerHTML = 0;
   calcArray = [];
   operatorLastClick = false;
+  operatorThenMinus = false;
 }
 
 function equalsClick(){
@@ -73,6 +74,7 @@ function equalsClick(){
   calcArray = [];
   displayNumb = [];
   operatorLastClick = false;
+  operatorThenMinus = false;
 }
 
 function myClick(t){
