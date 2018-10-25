@@ -35,7 +35,7 @@ function operatorClick(clicked){
         operatorThenMinus = true;
         console.log("plus, div or multiply followed by minus");
         makeNumber(clicked.innerHTML);
-        operatorThenMinus = true;
+        // operatorThenMinus = true;
         operatorLastClick == true;
         console.log(operatorLastClick);
         console.log(operatorThenMinus);
