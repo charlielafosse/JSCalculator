@@ -25,15 +25,12 @@ function makeNumber(key){
 }
 
 function operatorClick(clicked){
-  if(beginning == true && clicked.innerHTML == "-"){
+  if(beginning = true && clicked.innerHTML = "-"){
     console.log("negative number at beginning");
     operatorThenMinus = true;
     makeNumber(clicked.innerHTML);
     // maybe it fulfils other if statements after it executes this one?
-    // PROBLEM - calcArray is empty after equals!
-    // so you need to somehow make minus mean a negative number at the beginning,
-    // but make it mean subtract after equals...
-    // resolve with beginning boolean?
+    // PROBLEM - minus now works as subtract, but negative number at beg. no work
   } else if(operatorLastClick == false){
     calcArray.push(parsed);
     calcArray.push(clicked.id);
@@ -97,7 +94,6 @@ function equalsClick(){
 }
 
 function myClick(t){
-  beginning = false;
   if(t.target.className == "numb"){
     operatorLastClick == false;
     operatorThenMinus == false;
@@ -111,6 +107,7 @@ function myClick(t){
   } else {
   console.log("you didn't click a button");
   }
+  beginning = false;
 }
 
 document.getElementById("keyboard").addEventListener("click", myClick, false);
