@@ -3,6 +3,11 @@
 // strange, as operatorLastClick should be at false after the makeNumber func.
  // Maybe move the two booleans inside up to top??
 
+ // big problem - can't chain multiple operators and numbers in an equation...
+ // when the numbers are hit, the func is not registering that a number
+ // and NOT an operator has been hit... operatorLastClick is TRUE after numbers
+ // hit is basically the problem here
+
 // problem - contain long numbers within the display...
 
 // make trees disappear at break point (or shrink?)
@@ -19,7 +24,7 @@ function makeNumber(key){
   displayNumb.push(key);
   document.getElementById("display").innerHTML= displayNumb.join("");
   parsed = parseFloat(displayNumb.join(""), 10);
-  operatorLastClick == false;
+  operatorLastClick = false;
 }
 
 function operatorClick(clicked){
