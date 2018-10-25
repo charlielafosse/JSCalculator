@@ -3,6 +3,21 @@ body {
   font-family: "Arvo", serif;
 }
 
+img {
+  width: 300px;
+  margin-top: 40px;
+}
+
+.imgLeft{
+  float: left;
+  margin-left: 140px;
+}
+
+.imgRight{
+  float: right;
+  margin-right: 140px;
+}
+
 h2{
   color: white;
   width: 18%;
@@ -32,6 +47,19 @@ button {
 button:hover{
   color: #D7C4BB;
   cursor: pointer;
+}
+
+@keyframes wiggle {
+  20%  { transform: translateX(4px);  }
+  40%  { transform: translateX(-4px); }
+  60%  { transform: translateX(2px);  }
+  80%  { transform: translateX(-1px); }
+  100% { transform: translateX(0);    }
+}
+
+img:hover {
+  animation: wiggle 1s ease;
+  animation-iteration-count: 1;
 }
 
 #display {
