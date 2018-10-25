@@ -27,7 +27,7 @@ function operatorClick(clicked){
   } else if(operatorLastClick == true){
       console.log("second operator click");
       if(clicked.innerHTML == "-" && operatorThenMinus == false){
-        let operatorThenMinus == true;
+        let operatorThenMinus = true;
         console.log("plus, div or multiply followed by minus");
         makeNumber(clicked.innerHTML);
         operatorLastClick == true;
