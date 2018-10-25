@@ -6,7 +6,7 @@
  // big problem - can't chain multiple operators and numbers in an equation...
  // when the numbers are hit, the func is not registering that a number
  // and NOT an operator has been hit... operatorLastClick is TRUE after numbers
- // hit is basically the problem here
+ // hit is basically the
 
 // problem - contain long numbers within the display...
 
