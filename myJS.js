@@ -106,17 +106,19 @@ function myClick(t){
   if(t.target.className == "numb"){
     operatorLastClick == false;
     operatorThenMinus == false;
+    beginning = false;
     makeNumber(t.target.innerHTML);
   } else if(t.target.id == "clear"){
     clearClick();
   } else if(t.target.id == "equals"){
+    beginning = false;
     equalsClick();
   } else if(t.target.className == "operator"){
+    beginning = false;
     operatorClick(t.target);
   } else {
   console.log("you didn't click a button");
   }
-  beginning = false;
 }
 
 document.getElementById("keyboard").addEventListener("click", myClick, false);
