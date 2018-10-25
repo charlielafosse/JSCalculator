@@ -27,8 +27,17 @@ function makeNumber(key){
 function operatorClick(clicked){
   if(beginning == true && clicked.innerHTML == "-"){
     console.log("negative number at beginning");
-    operatorThenMinus = true;
-    makeNumber(clicked.innerHTML);
+    if(clicked.innerHTML == "-" && operatorThenMinus == false){
+      operatorThenMinus = true;
+      console.log("plus, div or multiply followed by minus");
+      makeNumber(clicked.innerHTML);
+      // operatorThenMinus = true;
+      operatorLastClick == true;
+      console.log(operatorLastClick);
+      console.log(operatorThenMinus);
+    } else if(operatorThenMinus == true || operatorLastClick == true) {
+      console.log("stop bogus clicking!");
+    }
     // maybe it fulfils other if statements after it executes this one?
     // PROBLEM - minus now works as subtract, but negative number at beg. no work
   } else if(operatorLastClick == false){
