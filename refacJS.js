@@ -42,7 +42,7 @@ function subtractClick(clicked){
   // was an operator OR if it's the beginning of the equation
   if(operatorLastClick == true || parsed == 0){
     // minus as a negative number
-    if(displayNumb == ["-"]){
+    if(displayNumb.length == 1 && displayNumb[0] == "-"){
       // this checks if already building a negative number, in which case
       // do nothing when hitting minus
       console.log("stop hitting minus");
