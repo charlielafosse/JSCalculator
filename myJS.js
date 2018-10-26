@@ -41,6 +41,7 @@ function operatorClick(clicked){
     // maybe it fulfils other if statements after it executes this one?
     // PROBLEM - minus now works as subtract, but negative number at beg. no work
   } else if(operatorLastClick == false){
+    console.log("minus as subtract (NOT neg numb)");
     calcArray.push(parsed);
     calcArray.push(clicked.id);
     document.getElementById("display").innerHTML = clicked.innerHTML;
