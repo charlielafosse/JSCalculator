@@ -26,6 +26,8 @@ function operatorClick(clicked){
     // push this operator to calcArray
     document.getElementById("display").innerHTML = clicked.innerHTML;
     // display this operator
+    displayNumb = [];
+    // wipe displayNumb so as to build a new inputted number
   } else {
     console.log("double operator click");
   }
@@ -46,6 +48,8 @@ function subtractClick(clicked){
     calcArray.push(parsed);
     calcArray.push(clicked.id);
     document.getElementById("display").innerHTML = clicked.innerHTML;
+    displayNumb = [];
+    // wipe displayNumb so as to build a new inputted number
     operatorLastClick = true;
   }
 }
