@@ -1,17 +1,7 @@
-// code refactor
-
-// perhaps do operator and minus separately? As minus has different concerns
-// YOU'LL NEED TO REMOVE SUBTRACT'S OPERATOR CLASS BEFORE DEPLOYING
-// rethink operatorLastClick
-
-// problem - when minus is as a negative number, only allow to be hit once!
-// instead of getting -------
-
 let calcArray = [];
 let displayNumb = [];
 let parsed = 0;
 let operatorLastClick = false;
-let negNumber = false;
 
 function makeNumber(key){
   displayNumb.push(key);
@@ -25,42 +15,30 @@ function operatorClick(clicked){
     console.log("normal operator function")
     operatorLastClick = true;
     calcArray.push(parsed);
-    // push the preceding number to calcArray
     calcArray.push(clicked.id);
-    // push this operator to calcArray
     document.getElementById("display").innerHTML = clicked.innerHTML;
-    // display this operator
     displayNumb = [];
-    // wipe displayNumb so as to build a new inputted number
   } else {
     console.log("double operator click");
   }
 }
 
 function subtractClick(clicked){
-  // IMPORTANT IF STATEMENT - use minus as a negative number if the last click
-  // was an operator OR if it's the beginning of the equation
   if(operatorLastClick == true || parsed == 0){
-    // minus as a negative number
     if(displayNumb.length == 1 && displayNumb[0] == "-"){
-      // this checks if already building a negative number, in which case
-      // do nothing when hitting minus
       console.log("stop hitting minus");
     } else {
       console.log("minus as a negative number");
       displayNumb.push(clicked.innerHTML);
       document.getElementById("display").innerHTML= displayNumb.join("");
       parsed = parseFloat(displayNumb.join(""), 10);
-      negNumber = true;
     }
   } else {
-    // minus as an operator
     console.log("minus as an operator");
     calcArray.push(parsed);
     calcArray.push(clicked.id);
     document.getElementById("display").innerHTML = clicked.innerHTML;
     displayNumb = [];
-    // wipe displayNumb so as to build a new inputted number
     operatorLastClick = true;
   }
 }
