@@ -4,10 +4,14 @@
 // YOU'LL NEED TO REMOVE SUBTRACT'S OPERATOR CLASS BEFORE DEPLOYING
 // rethink operatorLastClick
 
+// problem - when minus is as a negative number, only allow to be hit once!
+// instead of getting -------
+
 let calcArray = [];
 let displayNumb = [];
 let parsed = 0;
 let operatorLastClick = false;
+let negNumber = false;
 
 function makeNumber(key){
   displayNumb.push(key);
@@ -38,10 +42,17 @@ function subtractClick(clicked){
   // was an operator OR if it's the beginning of the equation
   if(operatorLastClick == true || parsed == 0){
     // minus as a negative number
-    console.log("minus as a negative number");
-    displayNumb.push(clicked.innerHTML);
-    document.getElementById("display").innerHTML= displayNumb.join("");
-    parsed = parseFloat(displayNumb.join(""), 10);
+    if(displayNumb == ["-"]){
+      // this checks if already building a negative number, in which case
+      // do nothing when hitting minus
+      console.log("stop hitting minus");
+    } else {
+      console.log("minus as a negative number");
+      displayNumb.push(clicked.innerHTML);
+      document.getElementById("display").innerHTML= displayNumb.join("");
+      parsed = parseFloat(displayNumb.join(""), 10);
+      negNumber = true;
+    }
   } else {
     // minus as an operator
     console.log("minus as an operator");
