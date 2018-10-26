@@ -39,7 +39,7 @@ function subtractClick(clicked){
   if(operatorLastClick == true || parsed == 0){
     // minus as a negative number
     console.log("minus as a negative number");
-    displayNumb.push(key);
+    displayNumb.push(clicked.innerHTML);
     document.getElementById("display").innerHTML= displayNumb.join("");
     parsed = parseFloat(displayNumb.join(""), 10);
   } else {
