@@ -1,5 +1,5 @@
-@media screen and (max-width: 908px) {
-    .imgLeft .imgRight {display:none;}
+@media screen and (max-width: 910px) {
+    img {display:none;}
 }
 
 body {
