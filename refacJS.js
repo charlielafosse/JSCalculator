@@ -4,10 +4,14 @@ let parsed = 0;
 let operatorLastClick = false;
 
 function makeNumber(key){
-  displayNumb.push(key);
-  document.getElementById("display").innerHTML= displayNumb.join("");
-  parsed = parseFloat(displayNumb.join(""), 10);
-  operatorLastClick = false;
+  if(key == "." && displayNumb.includes(".")){
+    console.log("double decimal press!");
+  } else {
+    displayNumb.push(key);
+    document.getElementById("display").innerHTML= displayNumb.join("");
+    parsed = parseFloat(displayNumb.join(""), 10);
+    operatorLastClick = false;
+  }
 }
 
 function operatorClick(clicked){

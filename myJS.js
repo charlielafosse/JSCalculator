@@ -16,8 +16,6 @@ let operatorThenMinus = false;
 let beginning = true;
 
 function makeNumber(key){
-  // operatorLastClick == false;
-  // operatorThenMinus == false;
   displayNumb.push(key);
   document.getElementById("display").innerHTML= displayNumb.join("");
   parsed = parseFloat(displayNumb.join(""), 10);
